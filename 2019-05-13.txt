@@ -23,3 +23,6 @@ Mock.mock({
     },
     prize: '@cparagraph(1,3)'
 })
+
+学习步骤：
+    学习-实践-掌握-教授
