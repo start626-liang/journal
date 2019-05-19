@@ -1,0 +1,128 @@
+ JavaScript 中 map、foreach、reduce ,some, every间的区别？
+脱离使用场景谈区别就是耍流氓：
+1、map速度比forEach快 
+2、map会返回一个新数组，不对原数组产生影响,foreach不会产生新数组， 
+3、map因为返回数组所以可以链式操作，forEach不能
+
+-----------------------------------------------------------------------------------------------
+
+（让数组中的每一项做一件事）
+The forEach() method executes a provided function once for each array element.
+forEach()函数用来对每一个元素执行一个函数/操作。
+forEach():没有返回值，只是针对每个元素调用func 
+场景
+  比如说绑定事件，比如判断值然后push到不同的地方
+语法
+arr.forEach(callback(element, index, array){
+}, this)
+参数：callback 回调
+ element 当前的value
+ index   当前的索引值
+ array   arr这个数组对象
+ this 回调的this指向
+用法
+//遍历数组。打印到控制台
+[10,11,12,13].forEach((v)=>{
+    console.log(v)
+})
+// 成功的收集到success里面,错误的收集到error里面。
+var success = [],error = [];
+[{state:1},{state:0},{state:0},{state:0}].forEach((v)=>{
+    if(v.state == 1){ success.push(v) }
+    else{ error.push(v) }
+})
+
+-----------------------------------------------------------------------------------------------
+
+(让数组通过某种计算产生一个新数组)
+The map() method creates a new array with the results of calling a provided function on every element in this array.
+map()函数是用来创建一个新的数组。
+map():返回一个新的Array，每个元素为调用func的结果 
+场景
+  这个一般就用在，我需要一组值，但是这个值不对，需要计算原数组来生成。(map产生的数组相对于原数组来说，数组项的value发生变化)
+语法
+arr.map(callback(element, index, array){ }, this)
+参数：callback 回调
+ element 当前的value
+ index   当前的索引值
+ array   arr这个数组对象
+ this 回调的this指向
+用法
+//把数值格式化，保留两位小数
+[10.055,11.054,12.056,13.789].map((v)=>+v.toFixed(2))
+
+
+-----------------------------------------------------------------------------------------------
+
+（筛选出数组中的符合条件的项，组成新的数组）
+The filter() method creates a new array with all elements that pass the test implemented by the provided function.
+filter()函数也是用来创建一个新的数组。
+filter():返回一个符合func条件的元素数组 
+场景
+  场景就是过滤，把符合条件的整理到一起，常见的就是展示审核通过的数据(如果我们想筛选出数组的某些项，那么显然就用filter)
+语法
+var new_arr = arr.filter(callback(element, index, array){
+}, this)
+参数：callback 回调
+ element 当前的value
+ index   当前的索引值
+ array   arr这个数组对象
+ this 回调的this指向
+用法
+//如果返回值是true的话，就是符合条件。
+//filter 不会改变原数组，它返回过滤后的新数组。
+//这个里返回数组里面的偶数
+[10,11,12,13].filter((v)=>v % 2 == 0)
+
+-----------------------------------------------------------------------------------------------
+
+（让数组中的前项和后项做某种计算，并累计最终值）
+The reduce() method applies a function against an accumulator and each value of the array (from left-to-right) to reduce it to a single value.
+reduce()函数是把数组缩减(reduce)为一个值(比如求和、求积)
+reduce():有返回值，重点是计算数组，返回一个值
+场景
+  这个计算整个数组得出一个值的
+  reduce则用的是递归的思想，对数组执行累加器的处理
+arr.reduce(callback(accumulator, element, index, array){
+}, initialValue)
+参数：callback 回调
+sum 累加器的返回值，也就是上一次回调的返回值 element 当前的value index 当前的索引值 array arr这个数组对象 initialValue 初始传入的值，如果不传回调从下标1开始，下标0作为初始值
+用法
+//累加
+[10,11,12,13].reduce((s,v)=>s+v,0)
+
+-----------------------------------------------------------------------------------------------
+
+（检查数组中有某些项是否符合条件）
+some():返回一个boolean，判断是否有元素是否符合func条件 
+语法
+arr.some(callback(element, index, array){
+}, this)
+参数：callback 回调
+ element 当前的value
+ index   当前的索引值
+ array   arr这个数组对象
+ this 回调的this指向
+用法
+initArray = initArray.some(item => { if (item === 1){ return true } return false })
+场景
+这个一般就用在，判断数组里是否有某个值。
+
+-----------------------------------------------------------------------------------------------
+
+（检查数组中的每一项是否符合条件）
+every():返回一个boolean，判断每个元素是否符合func条件 
+语法
+arr.every(callback(element, index, array){
+}, this)
+参数：callback 回调
+ element 当前的value
+ index   当前的索引值
+ array   arr这个数组对象
+ this 回调的this指向
+用法
+initArray = initArray.every(item => { if (item === 1){ return true } return false })
+场景
+这个一般就用在，判断数组的每个元素是否符合func条件。
+
+-----------------------------------------------------------------------------------------------
