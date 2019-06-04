@@ -1,0 +1,8 @@
+ECMAScript中所有的函数的参数都是按值传递的。例如：
+  let obj = {};
+  function changeValue(obj){
+    obj.name = 'ConardLi';
+    obj = {name:'code秘密花园'};
+  }
+  changeValue(obj);
+  console.log(obj.name); // ConardLi
