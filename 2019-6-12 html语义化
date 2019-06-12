@@ -1,0 +1,33 @@
+事实上，在HTML5中，article元素可以看成是一种特殊类型的section元素，它比 section元素更强调独立性。
+即section元素强调分段或分块，而article强调独立性。具体来说，如果一块内容相对来说比较独立的、完整的 时候，
+应该使用article元素，但是如果你想将一块内容分成几段的时候，应该使用section元素。
+另外，在HTML5中，div元素变成了一种容 器，当使用CSS样式的时候，可以对这个容器进行一个总体的CSS样式的套用<header> 
+<html>
+ <head></head>
+ <body>
+  <nav></nav>  
+  <aside>
+  <main> 
+   <section> 
+    <article> 
+    </article> 
+    <article> 
+    </article> 
+   </section> 
+  </main> 
+  <footer></footer>
+ </body>
+</html>
+
+
+<article> / <section>
+这俩标签的语义比较相像，都是表示文档中的一个独立区域（独立单元），其中还可以从结构上拆分成<header> / <footer>等部分。
+这俩标签比较起来的话，<article>比<section>要大一级：
+
+<article>中可以包含<section>，举个例子：一篇博客文章的下方或侧方一般会有“相关文章”的列表，那么，这一整块HTML就可以用<article>给包起来，而“相关文章”的那一小块HTML则可以用section来表示；再举个例子，比如说文章的“版权信息”，也可以用section来表示。
+<article>中可包含<article>，比如说：一篇文章以及这篇文章的用户评论，整块HTML可以用<article>来包起来，而用户评论从逻辑分析起来也是从属于这篇文章的，因此也可以用<article>包起来并归到文章的<article>之下。
+<section>之下不能再放<section>了，这从侧面表示这是最小一级的独立单元标签。
+<article>一般用于“详细内容”，因此一般一个页面只含有一个顶级的<article>。而相反，<section>的用途更广泛一些，除却“详细内容”外都可以用<section>来进行包裹，比如说：网站首页上，可以利用<section>来展示不同分类/栏目的文章列表。
+
+<aside>
+<aside>一般表示页面主体内容以外的侧边栏，比如上文提到的“相关文章”，又或者是“作者个人资料”，如果是这些情况的话，一般会被包含在<article>中。另外，<aside>也可以表示一些工具功能，比如说“分享文章”、“回到顶部”等功能。
