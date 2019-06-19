@@ -1,4 +1,5 @@
 ECMAScript中所有的函数的参数都是按值传递的。例如：
+  引用类型传入的是该对象变量的地址
   let obj = {};
   function changeValue(obj){
     obj.name = 'ConardLi';
