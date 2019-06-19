@@ -27,10 +27,11 @@ typeof
       typeof new Date() // object
       typeof /^\d*$/; // object
   
-  instanceof操作符可以帮助我们判断引用类型具体是什么类型的对象，但使用instanceof也不能检测基本数据类型
+  instanceof操作符可以帮助我们判断引用类型具体是什么类型的对象(原型)，但使用instanceof也不能检测基本数据类型
   
   每一个引用类型都有toString方法，默认情况下，toString()方法被每个Object对象继承。
       如果此方法在自定义对象中未被覆盖，toString() 返回 "[object type]"，其中type是对象的类型
+    Object.prototype.toString.call(对象变量)
 
 this只有4种情景：
   1.纯粹的函数调用,this指向window
