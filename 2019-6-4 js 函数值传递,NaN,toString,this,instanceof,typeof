@@ -1,8 +1,8 @@
 ECMAScript中所有的函数的参数都是按值传递的。例如：
-  引用类型传入的是该对象变量的引用地址
+  引用类型传入的参数是该对象变量的引用地址
   let obj = {};
   function changeValue(obj){
-    //obj是一个副本对象，接收到的值是引用地址
+    //obj是一个局部变量，接收到的值是引用地址
     obj.name = 'ConardLi';
     obj = {name:'code秘密花园'};
   }
