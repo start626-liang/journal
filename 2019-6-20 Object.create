@@ -1,0 +1,38 @@
+Object.create(proto, [propertiesObject])
+  参数：
+    proto 新创建对象的原型对象。
+    propertiesObject 可选。如果没有指定为 undefined，则是要添加到新创建对象的可枚举属性（即其自身定义的属性，而不是其原型链上的枚举属性）对象的属性描述符以及相应的属性名称。这些属性对应Object.defineProperties()的第二个参数。
+  
+  返回值：
+     一个新对象，带着指定的原型对象和属性。
+
+  
+Object.create()方法创建一个新对象，使用现有的对象来提供新创建的对象的__proto__。 
+Object.create()类似的写法
+Object.create = function (obj) {
+    function F() {}
+    F.prototype = obj;
+    return new F();
+  };
+  
+Object.create的第二个参数 propertiesObject 
+  除了对象的原型，Object.create方法还可以接受第二个参数。该参数是一个属性描述对象，它所描述的对象属性，会添加到实例对象，作为该对象自身的属性。
+    var obj = Object.create({}, {
+    p1: {
+      value: 123,
+      enumerable: true,
+      configurable: true,
+      writable: true,
+    },
+    p2: {
+      value: 'abc',
+      enumerable: true,
+      configurable: true,
+      writable: true,
+    }
+  });
+
+  // 等同于
+  var obj = Object.create({});
+  obj.p1 = 123;
+  obj.p2 = 'abc';
