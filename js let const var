@@ -1,0 +1,2 @@
+let，const不能重复声明，var可以
+let，const在全局作用域下声明不会覆盖全局变量，var可以
