@@ -33,3 +33,16 @@ demo();
   所以 demo函数的作用域里面的变量就成为了demo的私有变量，除了他自己，谁用调用不了。
 
   函数a  return b; 返回的是该函数的作用域链
+
+
+function demo(){
+	let a = 2
+	return {
+        set value(s){ a = s  },	
+        get value(){  return a  }
+	}
+}
+let o = demo()
+o.value // 2
+o.value = 231
+o.value // 231
