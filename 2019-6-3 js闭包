@@ -38,8 +38,8 @@ demo();
 function demo(){
 	let a = 2
 	return {
-        set value(s){ a = s  },	
-        get value(){  return a  }
+		set value(s){ a = s  },	
+		get value(){  return a  }
 	}
 }
 let o = demo()
