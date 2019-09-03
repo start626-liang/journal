@@ -116,6 +116,8 @@ arr.some(callback(element, index, array){
  index   当前的索引值
  array   arr这个数组对象
  this 回调的this指向
+ 返回值
+      如果回调函数返回至少一个数组元素的truthy值，则返回true；否则为false。
 用法
 initArray = initArray.some(item => { if (item === 1){ return true } return false })
 场景
@@ -133,8 +135,8 @@ arr.every(callback(element, index, array){
  index   当前的索引值
  array   arr这个数组对象
  this 回调的this指向
-  返回值
-      如果回调函数返回至少一个数组元素的truthy值，则返回true；否则为false。
+返回值
+     如果回调函数的每一次返回都为 truthy 值，返回 true ，否则返回 false。
 用法
 initArray = initArray.every(item => { if (item === 1){ return true } return false })
 场景
