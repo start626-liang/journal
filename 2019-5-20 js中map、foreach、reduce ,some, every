@@ -83,9 +83,16 @@ reduce():有返回值，重点是计算数组，返回一个值
 场景
   这个计算整个数组得出一个值的
   reduce则用的是递归的思想，对数组执行累加器的处理
-arr.reduce(callback(accumulator, element, index, array){
-}, initialValue)
-参数：callback 回调
+arr.reduce(callback(accumulator, currentValue[, index[, array]])[, initialValue])
+参数：callback 执行数组中每个值的函数，包含四个参数：
+        1.accumulator (acc) (累计器)累计器累计回调的返回值; 它是上一次调用回调时返回的累积值，或initialValue（见于下方）。
+        2.currentValue (cur) (当前值)数组中正在处理的元素。
+        3.index 可选 (当前索引)数组中正在处理的当前元素的索引。 如果提供了initialValue，则起始索引号为0，否则为1。
+        4.array 可选 (源数组)调用reduce()的数组
+     initialValue 可选
+      作为第一次调用 callback函数时的第一个参数的值。 如果没有提供初始值，则将使用数组中的第一个元素。 在没有初始值的空数组上调用 reduce 将报错
+返回值
+     函数累计处理的结果
 sum 累加器的返回值，也就是上一次回调的返回值 element 当前的value index 当前的索引值 array arr这个数组对象 initialValue 初始传入的值，如果不传回调从下标1开始，下标0作为初始值
 用法
 //累加
