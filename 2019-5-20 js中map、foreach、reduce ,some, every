@@ -20,6 +20,8 @@ arr.forEach(callback(element, index, array){
  index   当前的索引值
  array   arr这个数组对象
  this 回调的this指向
+ 返回值 
+   undefined.
 用法
 //遍历数组。打印到控制台
 [10,11,12,13].forEach((v)=>{
@@ -47,6 +49,8 @@ arr.map(callback(element, index, array){ }, this)
  index   当前的索引值
  array   arr这个数组对象
  this 回调的this指向
+ 返回值 
+    一个新数组，每个元素都是回调函数的结果
 用法
 //把数值格式化，保留两位小数
 [10.055,11.054,12.056,13.789].map((v)=>+v.toFixed(2))
@@ -68,6 +72,8 @@ var new_arr = arr.filter(callback(element, index, array){
  index   当前的索引值
  array   arr这个数组对象
  this 回调的this指向
+ 返回值
+    一个新的、由通过测试的元素组成的数组，如果没有任何数组元素通过测试，则返回空数组。
 用法
 //如果返回值是true的话，就是符合条件。
 //filter 不会改变原数组，它返回过滤后的新数组。
@@ -127,6 +133,8 @@ arr.every(callback(element, index, array){
  index   当前的索引值
  array   arr这个数组对象
  this 回调的this指向
+  返回值
+      如果回调函数返回至少一个数组元素的truthy值，则返回true；否则为false。
 用法
 initArray = initArray.every(item => { if (item === 1){ return true } return false })
 场景
