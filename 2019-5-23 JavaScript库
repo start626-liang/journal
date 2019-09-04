@@ -4,3 +4,4 @@ WebGL第三方库          Three.js
 生成随机数据              Mock.js
 动画库           Animate.css
 一致性、模块化、高性能的实用工具库   Lodash
+Immutable Data Collections          immutable.js
