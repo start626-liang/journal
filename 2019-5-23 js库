@@ -4,5 +4,6 @@ WebGL第三方库          Three.js
 生成随机数据              Mock.js
 动画库           Animate.css
 一致性、模块化、高性能的实用工具库   Lodash
-Immutable Data Collections          immutable.js
+Immutable persistent data collections for Javascript which increase efficiency and simplicity.           immutable.js
+Create the next immutable state by mutating the current one.        immer.js
 异步编程          RxJS
