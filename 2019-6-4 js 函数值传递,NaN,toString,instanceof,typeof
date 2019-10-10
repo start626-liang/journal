@@ -34,10 +34,8 @@ typeof
   每一个引用类型都有toString方法，默认情况下，toString()方法被每个Object对象继承。
       如果此方法在自定义对象中未被覆盖，toString() 返回 "[object type]"，其中type是对象的类型
     Object.prototype.toString.call(对象变量)
-
-this只有4种情景：
-  1.纯粹的函数调用,this指向window
-  2.对象方法调用,必须是a.b()或a [ "b" ]()这种形式调用，this指向对象
-  3.构造函数调用，new Foo() 时，会自动生成一个空对象并返回，this指向这个新生成的空对象
-  4.call,apply,bind，this可以随意指定。
+  这是一个十分常见的问题，用 typeof 是否能准确判断一个对象变量，答案是否定的，null 的结果也是 object，数组的结果也是 object，有时候我们需要的是 "纯粹" 的 object 对象。如何避免呢？比较好的方式是：
+  (注：原型链上没覆写toString方法)
+  var obj = {}
+  console.log(Object.prototype.toString.call(obj) === "[object Object]");
 
