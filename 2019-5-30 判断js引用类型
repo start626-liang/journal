@@ -1,4 +1,0 @@
-这是一个十分常见的问题，用 typeof 是否能准确判断一个对象变量，答案是否定的，null 的结果也是 object，数组的结果也是 object，有时候我们需要的是 "纯粹" 的 object 对象。如何避免呢？比较好的方式是：
-(注：原型链上没覆写toString方法)
-var obj = {}
-console.log(Object.prototype.toString.call(obj) === "[object Object]");
