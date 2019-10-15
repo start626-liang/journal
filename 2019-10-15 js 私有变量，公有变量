@@ -1,0 +1,4 @@
+function car(){ 
+    var wheel = 3; //私有变量 
+    this.wheel = 4; //公有变量 
+} 
