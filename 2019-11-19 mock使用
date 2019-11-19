@@ -1,0 +1,25 @@
+熟悉mock生成器http://mockjs.com/examples.html#Random\.cname\(\)
+可以生成中文 在模板里加@可以调用生成器，例如
+Mock.mock({
+    'status|1': ['待批复', '没批复', '批复中'],
+    user: {
+        corporation: '@csentence(10, 50)',
+        post: '@ctitle(3, 10)',
+        name: '@cname()',
+        phone: /^1[385][1-9]\d{8}/
+    },
+    'classify|1': ['打鱼', '烧鱼', '摸鱼'],
+    game: {
+        name: '@ctitle(13, 20)',
+        time: "@datetime('yyyy-MM-dd')",
+        'num|1-100': 1,
+        site: '@county()'
+    },
+    'cost|1-100.2': 1,
+    details: {
+        reason: '@cparagraph()',
+        mainImg: '@image()',
+        thumbnail: ['@image()', '@image()', '@image()']
+    },
+    prize: '@cparagraph(1,3)'
+})
