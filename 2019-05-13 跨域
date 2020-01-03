@@ -1,0 +1,21 @@
+摘自：https://www.zhihu.com/question/31592553
+
+浏览器器启动的时候，会启动一个叫 "V8引擎" 的东西，我们写的 JS 代码会在这个东西上执行，这个 V8 是会运行打开的所有页面的 JS 脚本的，比如你可以同时打开 github 和 MDN ，这时候github 的 JS 和 MDN 的 JS 都在这个 V8 上跑。
+
+可以跨域：
+1.form
+  form一般都是给别人发请求，而不是拿别人的数据。
+  form一般发完后，不需要别人反馈。或者说别人反馈了你也拿不到。 而ajax是一直在等别人的done or faill信息。 
+  传统form表单提交浏览器会发生跳转
+  form的控制权在浏览器手里，ajax在你的手里
+  form 提交之后会更新页面，而假如更新到指定 iframe/window 中，如果是跨域的，父页面访问其内容一样受到 same origin 策略限制。
+  
+2.src
+
+不可以跨域：
+1.ajax
+ 
+2.jsonp
+  动态生成script标签
+
+3.cors
