@@ -1,3 +1,5 @@
+通过响应的文本执行函数handleResponse
+
 //jsonp的回调函数
 function handleResponse(response){
   alert("You’ re at IP address " + response.ip + ", which is in " +
