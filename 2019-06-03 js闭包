@@ -2,6 +2,7 @@
 
 闭包：在函数内调用外部作用域的变量（使用函数内的作用域变量）
 
+
 无论通过何种手段将内部函数传递到所在的词法作用域以外， 它都会持有对原始定义作用域的引用， 无论在何处执行这个函数都会使用闭包。
 
 声明新函数时，将其赋值给变量，都会存储函数定义和闭包（作用域）。返回的函数可以访问不属于全局作用域的变量，但它们仅存在于其闭包中。
@@ -52,3 +53,29 @@ let o = demo()
 o.value // 2
 o.value = 231
 o.value // 231
+
+ 闭包是指有权访问另一个函数作用域中变量的函数，创建闭包的最常见的方式就是在一个函数内创建另一个函数，通过另一个函数访问这个函数的局部变量,利用闭包可以突破作用链域，将函数内部的变量和方法传递到外部。
+
+ 闭包的特性：
+
+ 1.函数内再嵌套函数
+ 2.内部函数可以引用外层的参数和变量
+ 3.参数和变量不会被垃圾回收机制回收
+
+ //li节点的onclick事件都能正确的弹出当前被点击的li索引
+  <ul id="testUL">
+     <li> index = 0</li>
+     <li> index = 1</li>
+     <li> index = 2</li>
+     <li> index = 3</li>
+ </ul>
+ <script type="text/javascript">
+   	var nodes = document.getElementsByTagName("li");
+ 	for(i = 0;i<nodes.length;i+= 1){
+ 	    nodes[i].onclick = (function(i){
+ 	              return function() {
+ 	                 console.log(i);
+ 	              } //不用闭包的话，值每次都是4
+ 	            })(i);
+ 	}
+ </script>
