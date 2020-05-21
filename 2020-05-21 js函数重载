@@ -1,3 +1,4 @@
+--https://www.cnblogs.com/yugege/p/5539020.html
 所谓函数重载(method overloading)，就是函数名称一样，但是输入输出不一样。或者说，允许某个函数有各种不同输入，根据不同的输入，返回不同的结果。
 凭直觉，函数重载可以通过if…else或者switch实现，这就不去管它了。
 jQuery之父John Resig提出了一个非常巧(bian)妙(tai)的方法，利用了闭包。
