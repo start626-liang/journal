@@ -1,7 +1,7 @@
 JavaScript 日期处理类库   Moment.js/day.js
 数据可视化和图表          D3.js       
 WebGL第三方库          Three.js
-生成随机数据              Mock.js
+生成随机数据              Mock.js  使用：https://github.com/iop19941031/journal/blob/master/2019-11-19%20mock%E4%BD%BF%E7%94%A8
 动画库           Animate.css
 一致性、模块化、高性能的实用工具库   Lodash
 Immutable persistent data collections for Javascript which increase efficiency and simplicity.           immutable.js
