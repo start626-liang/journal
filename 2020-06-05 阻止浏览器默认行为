@@ -3,3 +3,5 @@
 在所有其他情况下，return 值都会被忽略。并且，返回 true 没有意义。
 
 想要阻止默认行为 —— 可以使用 event.preventDefault() 或 return false。第二个方法只适用于通过 on<event> 分配的处理程序。
+
+addEventListener 的 passive: true 选项告诉浏览器该行为不会被阻止。
