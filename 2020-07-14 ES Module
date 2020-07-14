@@ -1,0 +1,2 @@
+ 对象解构(object destruct)的语法和 命名导出(named export)的语法长得一模一样.虽然语法一模一样，
+ 但是由于两者使用的上下文不一样，import {a，b,c } from './xxx'，这种情况下就是**named export,不和Import/Export一起使用时才是对象解构**。
