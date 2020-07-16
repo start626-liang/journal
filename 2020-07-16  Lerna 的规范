@@ -1,0 +1,12 @@
+.
+├── packages
+│      ├─ module-a
+│      │    ├─ src            # 模块 a 的源码
+│      │    └─ package.json   # 自动生成的，仅模块 a 的依赖
+│      └─ module-b
+│           ├─ src            # 模块 b 的源码
+│           └─ package.json   # 自动生成的，仅模块 b 的依赖
+├── tsconfig.json             # 配置文件，对整个项目生效
+├── .eslintrc                 # 配置文件，对整个项目生效
+├── node_modules              # 整个项目只有一个外层 node_modules
+└── package.json              # 包含整个项目所有依赖
