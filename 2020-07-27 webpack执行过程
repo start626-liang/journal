@@ -1,13 +1,26 @@
 参考文档：https://www.yuque.com/thzt/webpack/webpack-01
+
 环境：
 webpack@4.43.0
 webpack-cli@3.3.12
 win 10
+
 执行过程：
-1.webpack.cmd：webpack的cmd命令运行node_modules\webpack\bin\webpack.js
-2.webpack.js：解析一个对象，对象里有两个cli的参数（webpack-cli和webpack-command），过滤两个cli找出程序包所在的位置。
+1.node_modules\.bin\webpack.cmd：webpack的cmd命令运行node_modules\webpack\bin\webpack.js
+
+2.node_modules\webpack\bin\webpack.js：解析一个对象，对象里有两个cli的参数（webpack-cli和webpack-command），过滤两个cli找出程序包所在的位置。
+代码：if (installedClis.length === 0) 
 如果过滤后，找出的cli数量，
   是0时，提示用户没有安装cli；
   是不等于1时，提示用户只能安装一个cli（ To work with the "webpack" command you need only one CLI package, please remove one of them or use them directly via their binary.）；
   是1时，解析cli的package.json，找到bin对象对应的起始执行文件。（ps：webpack-cli的是bin/cli.js，以webpack-cli为例）
-3.cli.js：
+  
+3.node_modules\webpack-cli\bin\cli.js：
+代码：require("./config/config-yargs")(yargs);
+a.使用yargs配置webpack的命令（node_modules\webpack-cli\bin\config\config-yargs.js）
+b.yargs解析webpack命令行命令
+代码：yargs.parse(process.argv.slice(2),
+c.代码：const webpack = require("webpack");
+导入webpack模块，
+代码：compiler = webpack(options);   （node_modules\webpack\lib\Compiler.js）
+运行
