@@ -33,5 +33,5 @@ f.代码：compiler = webpack(options);
 g.代码：if (firstOptions.watch || options.watch) 
 判断webpack是否开启监听模式，（node_modules\webpack\lib\Compiler.js）
   开启监听模式，创建一个Watching对象
-  不开启监听模式，执行之前，添加一个钩子
+  不开启监听模式，执行之前，添加一个compiler钩子
 
