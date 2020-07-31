@@ -29,9 +29,9 @@ d.代码：processOptions(options);
 e.代码：const webpack = require("webpack");
 导入webpack模块，
 f.代码：compiler = webpack(options);   
-创建一个Compiler对象，初始化（node_modules\webpack\lib\Compiler.js）
+创建一个Compiler对象，初始化
 g.代码：if (firstOptions.watch || options.watch) 
-判断webpack是否开启监听模式，（node_modules\webpack\lib\Compiler.js）
+判断webpack是否开启监听模式，
   开启监听模式，创建一个Watching对象
   不开启监听模式，执行之前，添加一个compiler钩子
 
