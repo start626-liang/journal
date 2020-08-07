@@ -1,0 +1,52 @@
+转载：https://zhuanlan.zhihu.com/p/80278123
+SyncHook的特点是，每个注入的方法不关注返回值，同步的串行的执行每个方法
+
+看段具体代码
+
+const { SyncHook } = require("tapable");
+class MyVue {
+    constructor() {
+        this.hooks = {
+            beforeCreate: new SyncHook(["beforeCreateHook"]),
+            created: new SyncHook(["createdHook"]),
+            mounted: new SyncHook(),
+            destroyed: new SyncHook(),
+        };
+    }
+    defaultBeforeCreateHook(){
+        this.hooks.beforeCreate.tap('1', (name) => {
+        console.log('default', name);
+        })
+    }
+    beforeCreate() {
+        console.log('准备初始化MyVue实例了')
+        //....这里框架干了一堆事 ，就通过 hook 把使用者注入代码执行完成了
+        this.hooks.beforeCreate.call('MyVue')
+    }
+    created() {
+        console.log('干点其他事,唤起hook created ')
+        this.hooks.created.call(this)
+    }
+    init() {
+        //..... 干一堆事
+        this.beforeCreate()
+        //..... 再干一堆事
+        this.created()
+    }
+}
+const vueInstance = new MyVue()
+vueInstance.hooks.beforeCreate.tap('1', (name) => {
+    console.log('hello', name);
+})
+vueInstance.hooks.beforeCreate.tap('2', (name) => {
+    console.log('Wellocome', name);
+})
+vueInstance.init()
+
+输出如下：
+准备初始化MyVue实例了
+hello MyVue
+Wellocome MyVue
+干点其他事,唤起hook created
+
+这里模仿 Vue 定义了几个生命周期，这样是不是就把代码解藕了，在自己项目中就可以通过这种方式，把外部传入的逻辑和自己框架的逻辑剥离出来, defaultBeforeCreateHook 方法就可以做到可插拔，在你框架逻辑变化的时候，就改变 default* 这个方法就好 我们平常有写 Webpack 插件的话，都是这种方式挂载上去的
