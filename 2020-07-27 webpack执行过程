@@ -29,7 +29,7 @@ d.代码：processOptions(options);
 e.代码：const webpack = require("webpack");
 导入webpack模块，
 f.代码：compiler = webpack(options);   
-导入webpack配置，创建一个Compiler对象，初始化
+导入webpack配置，创建一个Compiler对象(Webpack 的实例)，初始化
 g.代码：if (firstOptions.watch || options.watch) 
 判断webpack是否开启监听模式，
   开启监听模式，创建一个Watching对象
