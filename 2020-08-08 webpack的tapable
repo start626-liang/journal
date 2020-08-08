@@ -4,5 +4,5 @@
 import { SyncHook } from 'tapable';
 
 const hook = new SyncHook(); // 创建钩子对象  （发起者注册
-hook.tap('logPlugin', () => console.log('被勾了')); // tap方法注册钩子回调  （主题，订阅者接收的目的地
+hook.tap('logPlugin', () => console.log('被勾了')); // tap方法注册钩子回调  （主题，订阅者和发布者的目的地
 hook.call(); // call方法调用钩子，打印出‘被勾了’三个字 （发布主题
