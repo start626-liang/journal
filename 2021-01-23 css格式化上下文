@@ -1,4 +1,4 @@
  BFC ：块-格式化上下文
- IFC ：行-格式化上下文 
+ IFC （Inline Formatting Context）：行内格式化上下文   ps：主要用来规则行内级盒子的格式化规则。
  Flexbox布局创建的 FFC ： 弹性盒子-格式化上下文 
  Grid布局创建 GFC ： 网格盒子-格式化上下文 
