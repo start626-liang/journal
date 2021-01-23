@@ -1,4 +1,14 @@
- BFC ：块-格式化上下文
- IFC （Inline Formatting Context）：行内格式化上下文   ps：主要用来规则行内级盒子的格式化规则。
- Flexbox布局创建的 FFC ： 弹性盒子-格式化上下文 
- Grid布局创建 GFC ： 网格盒子-格式化上下文 
+ BFC （Block Formatting Context）：块格式化上下文
+ ps：块格式化上下文包含创建它的元素内部的所有内容。其主要使用：
+    1.创建独立的渲染环境
+    2.防止因浮动导致的高度塌陷
+    3.防止上下相邻的外边距折叠
+    
+ IFC （Inline Formatting Context）：行内格式化上下文  
+ ps：主要用来规则行内级盒子的格式化规则。
+ 
+ Flexbox布局创建的 FFC （Flexbox Formatting Context）： flex格式化上下文 
+ ps：该容器为其内容创建一个新的格式化上下文，即Flex格式化上下文。
+ 
+ Grid布局创建 GFC （Grid Formaatting Context）： Grid格式化上下文 
+ ps：该完完全全器为其内容创建一个新的格式化上下文，即Grid格式化上下文。
