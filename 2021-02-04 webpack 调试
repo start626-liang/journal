@@ -1,0 +1,31 @@
+webpack 打包过程或者插件代码里该如何调试？
+
+1.在当前 webpack 项目工程文件夹下面，执行命令行：
+  node --inspect-brk ./debug.js --inline --progress
+  
+    debug.js:
+      const Webpack = require('webpack')
+      const WebpackDevServer = require('webpack-dev-server')
+      
+      // 配置文件
+      const defaultConfig = require('./webpack.dev.js')
+
+      const defaultDevConfig = Object.assign({}, defaultConfig)
+
+      const compiler = Webpack(defaultDevConfig)
+      const devServerOptions = defaultDevConfig.devServer
+      const devServer = new WebpackDevServer(compiler, devServerOptions)
+      devServer.listen(8080, 'localhost', () => {
+          console.log('[Lovely-CLI] Starting server on http://localhost:8082')
+      })
+
+  其中参数--inspect-brk 就是以调试模式启动 node：
+
+  终端会输出：
+  Debugger listening on ws://127.0.0.1:9229/1018c03f-7473-4d60-b62c-949a6404c81d
+  For help, see: https://nodejs.org/en/docs/inspector
+
+2.谷歌浏览器输入 chrome://inspect/#devices
+  点击inspect
+
+3.然后点一下 Chrome 调试器里的“继续执行”，断点就提留在我们设置在插件里的 debugger 断点了。
