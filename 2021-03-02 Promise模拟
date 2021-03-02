@@ -1,0 +1,20 @@
+
+function Promise(fn_executor, fn_reject) {
+    var fn_onResolve_ = null
+    var onReject_ = null
+
+    this.then = function (fn_onResolve, onReject) {
+        onResolve_ = fn_onResolve
+    };
+
+    fn_executor((value) => {
+        //Promise的延迟绑定，要不然会报“fn_onResolve_ is not a function“的错误
+        setTimeout(() => {
+            fn_onResolve_(value)
+        }, 0)
+    }, null);
+}
+
+new Promise((fn_resolve, fn_reject) => { fn_resolve(100) }).then(res => {
+
+})
