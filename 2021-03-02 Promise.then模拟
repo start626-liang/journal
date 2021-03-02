@@ -1,5 +1,5 @@
 
-function Promise(fn_executor, fn_reject) {
+function Promise(fn_executor) {
     var fn_onResolve_ = null
     var onReject_ = null
 
@@ -7,6 +7,7 @@ function Promise(fn_executor, fn_reject) {
         onResolve_ = fn_onResolve
     };
 
+    // 执行fn_executor函数
     fn_executor((value) => {
         //Promise的延迟绑定，要不然会报“fn_onResolve_ is not a function“的错误
         setTimeout(() => {
