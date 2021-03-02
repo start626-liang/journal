@@ -11,6 +11,7 @@ function Promise(fn_executor) {
     fn_executor(
         (value) => {
             //Promise的延迟绑定，要不然会报“fn_onResolve_ is not a function“的错误
+            // 真正的Promise执行是微任务，setTimeout模拟执行是宏任务
             setTimeout(() => {
                 fn_onResolve_(value)
             }, 0)
