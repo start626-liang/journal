@@ -7,7 +7,7 @@ function Promise(fn_executor) {
         onResolve_ = fn_onResolve
     };
 
-    // 执行fn_executor函数
+    // 执行fn_executor函数，给resolve和reject传参-回调函数
     fn_executor(
         (value) => {
             //Promise的延迟绑定，要不然会报“fn_onResolve_ is not a function“的错误
