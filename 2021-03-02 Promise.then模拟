@@ -20,6 +20,7 @@ function Promise(fn_executor) {
     );
 }
 
+//resolve和reject触发微任务
 new Promise((fn_resolve, fn_reject) => { fn_resolve(100) }).then(res => {
 
 })
