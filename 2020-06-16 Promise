@@ -1,6 +1,0 @@
-new Promise(function(resolve){
-    resolve(42);
-});
-
-简写：
-Promise.resolve(42);
