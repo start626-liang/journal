@@ -1,3 +1,5 @@
 Observables是惰性运算
 
 Promise 是立即运算， new声明创建开始
+
+Observables和Promise都是推送的方式
