@@ -9,3 +9,4 @@ Create the next immutable state by mutating the current one.        immer.js
 异步编程(响应式编程)          RxJS
 A querystring parsing and stringifying library with some added security.    qs.js
 调试 debug.js
+PreloadJS  一个用来管理和协调相关资源加载的类库   ps：https://www.jianshu.com/p/11aea89260a2
