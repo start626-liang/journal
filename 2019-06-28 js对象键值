@@ -1,3 +1,0 @@
-所有对象的键（不包括 Symbol）在底层都是字符串 ,数组也是对象，key是索引，value是值
-
-在对象中,属性名永远都是字符串,其他值会被首先转换为字符串，比如true => "true", 3 => "3", myObject = {} ,myObject => "[object Object]"
