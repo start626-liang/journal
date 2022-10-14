@@ -1,0 +1,34 @@
+Observable 的核心关注点：
+    创建 Observables
+    订阅 Observables
+    执行 Observables
+    清理 Observables
+    创建 Observables
+
+--------------------------------------------------------
+
+创建 Observables
+var foo = Rx.Observable.create(function (observer) {
+  console.log('Hello');
+  observer.next(42);
+  observer.next(100);
+  observer.next(200);
+  setTimeout(() => {
+    observer.next(300); // 异步执行
+  }, 1000);
+});
+
+-------------------------------------------------------
+
+订阅 Observables
+var subscribe = foo.subscribe(
+//执行 Observables (next
+function (x) {
+  console.log(x);
+}
+);
+
+-----------------------------------------------------------
+
+清理 Observables
+subscription.unsubscribe(); // 版本不同，unsubscribeapi会变更
