@@ -10,3 +10,4 @@ Create the next immutable state by mutating the current one.        immer.js
 A querystring parsing and stringifying library with some added security.    qs.js
 调试 debug.js
 PreloadJS  一个用来管理和协调相关资源加载的类库，它可以方便的帮助你预先加载相关资源   ps：https://www.jianshu.com/p/11aea89260a2
+GSAP 一个用户界面中运用动态效果的设计库
