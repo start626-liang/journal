@@ -1,0 +1,12 @@
+ps：http://icyfenix.cn/architect-perspective/general-architecture/api-style/rpc.html
+1994 年至 1997 年间，由 ACM 和 Sun 院士Peter Deutsch、套接字接口发明者Bill Joy、Java 之父James Gosling等一众在 Sun Microsystems 工作的大佬们共同总结了通过网络进行分布式运算的八宗罪（8 Fallacies of Distributed Computing）：
+
+The network is reliable —— 网络是可靠的。
+Latency is zero —— 延迟是不存在的。
+Bandwidth is infinite —— 带宽是无限的。
+The network is secure —— 网络是安全的。
+Topology doesn't change —— 拓扑结构是一成不变的。
+There is one administrator —— 总会有一个管理员。
+Transport cost is zero —— 不必考虑传输成本。
+The network is homogeneous —— 网络是同质化的。
+以上这八条反话被认为是程序员在网络编程中经常被忽略的八大问题，潜台词就是如果远程服务调用要弄透明化的话，就必须为这些罪过埋单，这算是给 RPC 是否能等同于 IPC 来实现暂时定下了一个具有公信力的结论。至此，RPC 应该是一种高层次的或者说语言层次的特征，而不是像 IPC 那样，是低层次的或者说系统层次的特征成为工业界、学术界的主流观点。
