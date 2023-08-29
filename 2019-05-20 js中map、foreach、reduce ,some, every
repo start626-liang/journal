@@ -126,7 +126,7 @@ initArray = initArray.some(item => { if (item === 1){ return true } return false
 -----------------------------------------------------------------------------------------------
 
 （检查数组中的每一项是否符合条件）
-every():返回一个boolean，判断每个元素是否符合func条件 
+every():返回一个boolean，判断每个元素是否符合func条件 （它为数组中的每个元素调用一次指定的 callbackFn 函数，直到 callbackFn 返回一个假值。
 语法
 arr.every(callback(element, index, array){
 }, this)
