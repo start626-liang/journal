@@ -24,3 +24,30 @@ function Promise(fn_executor) {
 new Promise((fn_resolve, fn_reject) => { fn_resolve(100) }).then(res => {
 
 })
+----------------------------------------------------------------------
+//极简的实现
+class Promise {
+    callbacks = [];
+    constructor(fn) {
+        fn(this._resolve.bind(this));
+    }
+    then(onFulfilled) {
+        this.callbacks.push(onFulfilled);
+    }
+    _resolve(value) {
+        this.callbacks.forEach(fn => fn(value));
+    }
+}
+
+//Promise应用
+// resolve参数赋值成 class Promise的  _resolve
+// resolve参数调用时，_resolve方法的循环的fn参数就是then回调注册的函数
+let p = new Promise(resolve => {
+    setTimeout(() => {
+        console.log('done');
+        resolve('5秒');
+    }, 5000);
+}).then((tip) => {
+    // 注册到 class Promise的  callback数组
+    console.log(tip);
+})
