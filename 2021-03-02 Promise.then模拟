@@ -29,6 +29,7 @@ new Promise((fn_resolve, fn_reject) => { fn_resolve(100) }).then(res => {
 class Promise {
     callbacks = [];
     constructor(fn) {
+        // 绑定完就直接执行
         fn(this._resolve.bind(this));
     }
     then(onFulfilled) {
