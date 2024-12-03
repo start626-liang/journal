@@ -1,3 +1,5 @@
+ 将一切都视为随时间变化的数据流，从而能够用更加函数式和响应式的方式来处理复杂的数据处理问题。
+
 Observable 的核心关注点：
     创建 Observables
     订阅 Observables
